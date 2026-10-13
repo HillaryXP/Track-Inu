@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Track Inu ($TRACKINU) | Fastest Dog On The Blockchain</title>
+<meta name="description" content="Track Inu is the fastest dog on Solana. Chasing PRs, hunting ATHs, challenging every meme coin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&family=DotGothic16&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --black:#000;
+  --asphalt:#14110f;
+  --track:#a93a24;
+  --track-dark:#6e2214;
+  --gold:#ffc928;
+  --chalk:#f3efe6;
+  --muted:#b9b2a4;
+  --display:'Anton','Impact','Arial Narrow',sans-serif;
+  --brush:'Permanent Marker','Marker Felt',cursive;
+  --body:'Barlow','Helvetica Neue',Arial,sans-serif;
+  --led:'DotGothic16','Courier New',monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px);height:auto}
+body{margin:0;background:var(--black);color:var(--chalk);font-family:var(--body);font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{width:min(1140px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.95;margin:0;letter-spacing:.01em;text-transform:uppercase}
+h2{font-size:clamp(2.4rem,7vw,4.6rem)}
+p{margin:0 0 1em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1.15rem;padding:.85em 1.4em;border:3px solid var(--gold);text-decoration:none;cursor:pointer;background:none;color:var(--chalk);transition:transform .12s ease,background .12s ease,color .12s ease}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--gold)}
+.btn:active{transform:none;box-shadow:none}
+.btn.primary{background:var(--gold);color:var(--black)}
+.btn.small{font-size:.95rem;padding:.55em 1em;border-width:2px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(0,0,0,.92);backdrop-filter:blur(6px);border-bottom:3px solid var(--gold)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font-family:var(--display);font-size:1.5rem;text-decoration:none;text-transform:uppercase;letter-spacing:.02em}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:22px;align-items:center}
+.links a.t{font-family:var(--display);text-transform:uppercase;text-decoration:none;font-size:1rem;letter-spacing:.05em;color:var(--muted)}
+.links a.t:hover{color:var(--gold)}
+@media (max-width:760px){.links a.t{display:none}}
+
+/* hero */
+.hero{position:relative;padding:48px 0 0;background:
+  radial-gradient(1200px 500px at 85% 20%,rgba(255,201,40,.16),transparent 60%),
+  linear-gradient(180deg,#1c0d08 0%,#000 78%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(4.6rem,17vw,11rem);color:var(--chalk);transform:rotate(-2deg);transform-origin:left bottom;text-shadow:5px 5px 0 var(--track)}
+.hero h1 .inu{display:block;color:var(--gold);text-shadow:5px 5px 0 var(--track-dark)}
+.hero .tag{font-family:var(--brush);font-size:clamp(1.3rem,3.6vw,2rem);color:var(--gold);margin:22px 0 6px;transform:rotate(-1deg)}
+.hero .sub{color:var(--muted);max-width:34ch;font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.coin{position:relative;justify-self:center;width:min(100%,430px)}
+.coin img{border-radius:50%;box-shadow:0 0 0 6px var(--black),0 0 0 10px var(--gold),0 30px 80px rgba(255,120,20,.35);animation:drop .9s cubic-bezier(.2,.9,.25,1.15) both}
+@keyframes drop{from{transform:translateX(120%) rotate(240deg);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.coin{width:min(78%,360px);order:-1}.hero h1{transform:rotate(-1.5deg)}}
+
+/* scoreboard */
+.board{margin-top:48px;background:#06100a;border-top:4px solid var(--gold);border-bottom:4px solid var(--gold);overflow:hidden}
+.board .row{display:flex;white-space:nowrap;width:max-content;animation:scroll 34s linear infinite;font-family:var(--led);font-size:clamp(1.2rem,3.4vw,1.8rem);color:#6dff9c;text-shadow:0 0 8px rgba(109,255,156,.55);padding:14px 0}
+.board .row span{padding:0 28px}
+.board .row b{color:var(--gold);font-weight:400;text-shadow:0 0 8px rgba(255,201,40,.55)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* contract */
+.ca{background:var(--gold);color:var(--black);padding:16px 0}
+.ca .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ca .label{font-family:var(--display);text-transform:uppercase;font-size:1.2rem}
+.ca code{font-family:'Courier New',monospace;font-weight:700;font-size:clamp(.78rem,2.6vw,1.05rem);word-break:break-all;flex:1 1 280px}
+.ca .btn{border-color:var(--black);color:var(--black);padding:.5em 1em;font-size:1rem}
+.ca .btn:hover{box-shadow:4px 4px 0 var(--black)}
+
+section{padding:88px 0}
+.kicker{font-family:var(--brush);color:var(--gold);font-size:1.4rem;margin-bottom:10px;transform:rotate(-1.5deg);display:inline-block}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.about figure{margin:0;position:relative}
+.about figure img{border:4px solid var(--chalk);transform:rotate(-2deg);box-shadow:12px 12px 0 var(--track)}
+.about p{max-width:52ch;color:#ddd7ca}
+.about h2{margin-bottom:22px}
+.traits{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0;list-style:none}
+.traits li{border:2px solid var(--gold);padding:6px 14px;font-family:var(--display);text-transform:uppercase;letter-spacing:.04em;font-size:1rem}
+@media (max-width:860px){.about{grid-template-columns:1fr}}
+
+/* race board */
+.race{background:var(--track);background-image:repeating-linear-gradient(90deg,transparent 0 118px,rgba(255,255,255,.12) 118px 120px);position:relative}
+.race::before,.race::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-conic-gradient(#000 0 25%,#fff 0 50%) 0 0/20px 20px}
+.race::before{top:0}.race::after{bottom:0}
+.race h2{color:var(--chalk);text-shadow:4px 4px 0 var(--black)}
+.race .lead{max-width:50ch;font-size:1.15rem;margin:18px 0 34px;color:#fff}
+.race figure{margin:0 0 36px}
+.race figure img{width:100%;border:4px solid var(--black);box-shadow:10px 10px 0 var(--black)}
+.lanes{background:rgba(0,0,0,.55);border:3px solid var(--black);padding:20px}
+.lane{position:relative;height:64px;border-bottom:2px dashed rgba(255,255,255,.4);display:flex;align-items:center}
+.lane:last-of-type{border-bottom:0}
+.lane .name{position:absolute;left:8px;top:4px;font-family:var(--display);font-size:.9rem;text-transform:uppercase;color:var(--gold);letter-spacing:.05em}
+.lane .runner{position:absolute;left:0;bottom:6px;font-size:2.1rem;line-height:1;transition:transform 0s linear;will-change:transform}
+.lane .finish{position:absolute;right:0;top:0;bottom:0;width:14px;background:repeating-conic-gradient(#000 0 25%,#fff 0 50%) 0 0/14px 14px}
+.runner-wrap{position:absolute;left:0;right:22px;top:0;bottom:0}
+.sim-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:18px}
+.result{font-family:var(--brush);font-size:1.4rem;color:var(--gold);min-height:1.6em;flex:1 1 220px}
+.fine{font-size:.85rem;color:#ffd9cf;margin-top:10px}
+.log{margin-top:34px;border:3px dashed rgba(255,255,255,.55);padding:22px 24px}
+.log h3{font-size:1.6rem;margin-bottom:8px}
+.log p{margin:0 0 14px;color:#fff;max-width:56ch}
+
+/* buy */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:40px;counter-reset:s;border:3px solid var(--chalk)}
+.step{padding:24px 22px;border-right:3px solid var(--chalk);position:relative}
+.step:last-child{border-right:0}
+.step::before{counter-increment:s;content:counter(s);font-family:var(--display);font-size:3.6rem;color:var(--gold);line-height:1;display:block;margin-bottom:8px}
+.step h3{font-size:1.5rem;margin-bottom:8px}
+.step p{color:var(--muted);font-size:1rem;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:3px solid var(--chalk)}.step:nth-child(2){border-right:0}.step:nth-child(n+3){border-bottom:0}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:3px solid var(--chalk)!important}.step:last-child{border-bottom:0!important}}
+.buy-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* tokenomics */
+.toke{background:var(--asphalt)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:36px}
+.stat{border-left:6px solid var(--gold);padding:6px 0 6px 18px}
+.stat dt{font-family:var(--display);font-size:2rem;text-transform:uppercase;line-height:1.05}
+.stat dd{margin:6px 0 0;color:var(--muted);font-size:1rem}
+
+/* roadmap */
+.road{list-style:none;margin:44px 0 0;padding:0;position:relative}
+.road::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:4px;background:repeating-linear-gradient(180deg,var(--gold) 0 14px,transparent 14px 24px)}
+.road li{position:relative;padding:0 0 34px 64px}
+.road li::before{content:"";position:absolute;left:8px;top:6px;width:26px;height:26px;background:var(--black);border:4px solid var(--gold);border-radius:50%}
+.road li.now::before{background:var(--gold);box-shadow:0 0 0 6px rgba(255,201,40,.3)}
+.road h3{font-size:1.7rem;margin-bottom:4px}
+.road p{color:var(--muted);margin:0;max-width:56ch}
+.road .tagnow{font-family:var(--brush);color:var(--gold);font-size:1.1rem;margin-left:8px;text-transform:none}
+
+/* community */
+.banner{padding:0;border-top:4px solid var(--gold)}
+.banner img{width:100%;height:auto}
+.community{text-align:center}
+.community h2{margin-bottom:16px}
+.community p{max-width:46ch;margin:0 auto 28px;color:var(--muted);font-size:1.15rem}
+.community .cta{justify-content:center}
+
+footer{border-top:3px solid var(--gold);padding:34px 0 48px;color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;flex-direction:column;gap:10px}
+footer strong{color:var(--chalk);font-family:var(--display);text-transform:uppercase;font-size:1.1rem;letter-spacing:.04em}
+
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,40px);background:var(--gold);color:#000;font-family:var(--display);text-transform:uppercase;padding:.7em 1.3em;opacity:0;pointer-events:none;transition:.2s;z-index:50}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){
+  .board .row{animation:none}.coin img{animation:none}html{scroll-behavior:auto}.btn,.toast{transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Track <span>Inu</span></a>
+    <div class="links">
+      <a class="t" href="#about">About</a>
+      <a class="t" href="#race">The Track</a>
+      <a class="t" href="#buy">How to buy</a>
+      <a class="t" href="#roadmap">Roadmap</a>
+      <a class="btn primary small" href="https://pump.fun/coin/DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">Buy</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Track<span class="inu">Inu</span></h1>
+      <p class="tag">Fastest Dog On The Blockchain</p>
+      <p class="sub">Chasing PRs. Hunting ATHs. Challenging every meme coin. 🏁</p>
+      <div class="cta">
+        <a class="btn primary" href="https://pump.fun/coin/DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">Buy $TRACKINU</a>
+        <a class="btn" href="https://t.me/+ubK4zNaeDnNlOTRh" target="_blank" rel="noopener">Join Telegram</a>
+        <a class="btn" href="https://x.com/TrackInu" target="_blank" rel="noopener">Follow on X</a>
+      </div>
+    </div>
+    <div class="coin"><img src="images/coin.jpg" alt="Track Inu coin: a Shiba in a headband and sunglasses sprinting down a track at sunset" width="720" height="720"></div>
+  </div>
+  <div class="board" aria-label="Scoreboard ticker">
+    <div class="row" aria-hidden="true">
+      <span>RUN.</span><span>TRAIN.</span><span>PUMP.</span><span>REPEAT.</span><span><b>$TRACKINU</b></span><span>SMALL CAP</span><span>BIG ENERGY</span><span>ATH LOADING...</span><span>WHO'S NEXT?</span>
+      <span>RUN.</span><span>TRAIN.</span><span>PUMP.</span><span>REPEAT.</span><span><b>$TRACKINU</b></span><span>SMALL CAP</span><span>BIG ENERGY</span><span>ATH LOADING...</span><span>WHO'S NEXT?</span>
+    </div>
+  </div>
+</header>
+
+<div class="ca">
+  <div class="wrap">
+    <span class="label">Contract (Solana)</span>
+    <code id="ca">DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump</code>
+    <button class="btn" id="copy" type="button">Copy</button>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <figure><img src="images/warm-up.jpg" alt="Track Inu stretching on a track at sunset next to a water bottle and towel" width="860" height="860" loading="lazy"></figure>
+    <div>
+      <span class="kicker">Warm up's over</span>
+      <h2>He doesn't sit. He doesn't wait.</h2>
+      <p>Track Inu is the fastest dog on the Solana blockchain. He's on the track every day, chasing personal records, hunting all-time highs and calling out every other meme coin.</p>
+      <p>Every hour, every pump, every dip is a race. He lines up, wins or loses on short-term performance, then asks the only question that matters: who's next?</p>
+      <p>Train with him. Pump with him. Race with him.</p>
+      <ul class="traits">
+        <li>Competitive</li><li>High-octane</li><li>Trash-talking</li><li>Never quits</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="race" id="race">
+  <div class="wrap">
+    <span class="kicker" style="color:var(--chalk)">The Track</span>
+    <h2>Think you can outrun the dog?</h2>
+    <p class="lead">Track Inu races other coins on short-term performance. Pick his next opponent, then watch him line up.</p>
+    <figure><img src="images/next-race.jpg" alt="Track Inu and Claudia crouched in starting blocks side by side for The Next Race" width="1200" height="800" loading="lazy"></figure>
+
+    <div class="lanes" id="lanes">
+      <div class="lane"><span class="name">$TrackInu</span><div class="runner-wrap"><span class="runner" id="r1" aria-hidden="true"><span style="display:inline-block;transform:scaleX(-1)">🐕</span></span></div><span class="finish"></span></div>
+      <div class="lane"><span class="name">Challenger</span><div class="runner-wrap"><span class="runner" id="r2" aria-hidden="true"><span style="display:inline-block;transform:scaleX(-1)">🏃</span></span></div><span class="finish"></span></div>
+      <div class="sim-bar">
+        <button class="btn primary" id="go" type="button">Fire the starter pistol</button>
+        <div class="result" id="result" role="status" aria-live="polite">On your marks.</div>
+      </div>
+      <p class="fine">Just a toy race for fun. Results are random and not real price data.</p>
+    </div>
+
+    <div class="log">
+      <h3>Race log</h3>
+      <p>Results from real races get posted here after each run. Nothing logged yet, so tell Track Inu who to line up against next.</p>
+      <a class="btn small primary" href="https://x.com/TrackInu" target="_blank" rel="noopener">Name the next opponent on X</a>
+    </div>
+  </div>
+</section>
+
+<section id="buy">
+  <div class="wrap">
+    <span class="kicker">Get in the blocks</span>
+    <h2>How to buy</h2>
+    <div class="steps">
+      <div class="step"><h3>Get a wallet</h3><p>Install a Solana wallet like Phantom or Solflare and save your recovery phrase offline.</p></div>
+      <div class="step"><h3>Buy SOL</h3><p>Buy SOL on an exchange and send it to your wallet address.</p></div>
+      <div class="step"><h3>Open a DEX</h3><p>Go to Pump.fun, Jupiter or Raydium and connect your wallet.</p></div>
+      <div class="step"><h3>Paste the contract</h3><p>Paste the contract address above, check it matches exactly, then swap SOL for $TRACKINU.</p></div>
+    </div>
+    <div class="buy-links">
+      <a class="btn primary" href="https://pump.fun/coin/DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">Pump.fun</a>
+      <a class="btn" href="https://jup.ag/swap/SOL-DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">Jupiter</a>
+      <a class="btn" href="https://dexscreener.com/solana/DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">Dexscreener chart</a>
+      <a class="btn" href="https://www.geckoterminal.com/solana/tokens/DwpCcx2u5NJ2aTEvNAopPNALRFmNNgVkxBME8dmnpump" target="_blank" rel="noopener">GeckoTerminal</a>
+    </div>
+  </div>
+</section>
+
+<section class="toke" id="tokenomics">
+  <div class="wrap">
+    <span class="kicker">Keep it simple</span>
+    <h2>Tokenomics</h2>
+    <dl class="stats">
+      <div class="stat"><dt>Fair launch</dt><dd>Launched on Pump.fun on October 12, 2026.</dd></div>
+      <div class="stat"><dt>Solana</dt><dd>Fast and cheap, like the dog.</dd></div>
+      <div class="stat"><dt>Community-driven</dt><dd>No team allocation announced publicly yet.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <span class="kicker">The training plan</span>
+    <h2>Roadmap</h2>
+    <ol class="road">
+      <li class="now"><h3>Launch and community<span class="tagnow">we're here</span></h3><p>Fair launch on Pump.fun. Build the pack on Telegram and X.</p></li>
+      <li><h3>Website and team</h3><p>Ship the site. Bring on real developers and team members.</p></li>
+      <li><h3>Marketing push and races</h3><p>Race other coins out in the open and let the community pick opponents.</p></li>
+      <li><h3>Racing utility</h3><p>Explore gambling and racing features once the pack is big enough.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="banner"><img src="images/banner.jpg" alt="Track Inu banner: Run. Train. Pump. Repeat. Faster, higher, further." width="1500" height="500" loading="lazy"></section>
+
+<section class="community" id="community">
+  <div class="wrap">
+    <h2>Line up. Run.</h2>
+    <p>Join the pack, post your best runner and see if Track Inu races them.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://t.me/+ubK4zNaeDnNlOTRh" target="_blank" rel="noopener">Join Telegram</a>
+      <a class="btn" href="https://x.com/TrackInu" target="_blank" rel="noopener">@TrackInu on X</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Track Inu 🐕🏁</strong>
+    <span>Not financial advice. Do your own research. $TRACKINU is a meme coin and carries high risk. Only spend what you can afford to lose.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status">Contract copied</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),t;
+  function say(msg){toast.textContent=msg;toast.classList.add('on');clearTimeout(t);t=setTimeout(function(){toast.classList.remove('on')},1800)}
+  document.getElementById('copy').addEventListener('click',function(){
+    var txt=document.getElementById('ca').textContent.trim();
+    function fallback(){
+      var r=document.createRange();r.selectNodeContents(document.getElementById('ca'));
+      var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+      try{document.execCommand('copy');say('Contract copied')}catch(e){say('Press and hold to copy')}
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){say('Contract copied')},fallback)}else{fallback()}
+    }catch(e){fallback()}
+  });
+
+  var go=document.getElementById('go'),r1=document.getElementById('r1'),r2=document.getElementById('r2'),res=document.getElementById('result');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var raf=null;
+  function reset(){[r1,r2].forEach(function(r){r.style.transform='translateX(0)'})}
+  go.addEventListener('click',function(){
+    if(raf)cancelAnimationFrame(raf);
+    reset();
+    var track=r1.parentElement.clientWidth-44;
+    var d1=2600+Math.random()*1800,d2=2600+Math.random()*1800;
+    var win1=d1<=d2;
+    res.textContent='RUN!';
+    go.disabled=true;
+    if(reduce){
+      r1.style.transform='translateX('+track+'px)';r2.style.transform='translateX('+track+'px)';finish();return;
+    }
+    var start=null;
+    function ease(p){return p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2}
+    function step(ts){
+      if(!start)start=ts;
+      var e=ts-start,p1=Math.min(e/d1,1),p2=Math.min(e/d2,1);
+      r1.style.transform='translateX('+(ease(p1)*track)+'px)';
+      r2.style.transform='translateX('+(ease(p2)*track)+'px)';
+      if(p1<1||p2<1){raf=requestAnimationFrame(step)}else{finish()}
+    }
+    raf=requestAnimationFrame(step);
+    function finish(){
+      go.disabled=false;go.textContent='Run it back';
+      res.textContent=win1?'Track Inu takes it. Who\'s next? 🏁':'Challenger wins this one. Track Inu wants a rematch. 🔥';
+    }
+  });
+})();
+</script>
+</body>
+</html>
